@@ -1,12 +1,13 @@
-module sev.event;
+module sev.event.event;
+import sev.event.eventargs;
 
-alias EventHandler = void delegate(void* sender, void* data);
+alias EventHandler = void delegate(void* sender, EventArgs data);
 
 public class Event {
 	private EventHandler[] handlers;
 	this() { }
 
-	void opCall(void* sender, void* data) {
+	void opCall(void* sender, EventArgs data) {
 		foreach(EventHandler h; handlers) {
 			h(sender, data);
 		}
@@ -14,7 +15,7 @@ public class Event {
 
 	void opCall(void* sender) {
 		foreach(EventHandler h; handlers) {
-			h(sender, null);
+			h(sender, EventArgs.Empty);
 		}
 	}
 

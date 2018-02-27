@@ -4,16 +4,16 @@ Library that adds C#-esque events to D.
 
 ## How to use
 
-the Event class is localed in the `sev` module (short for sharpevents)
+the Event class is localed in the `sev.event` module (short for sharpevents)
 
 To create a new event, do like this.
 ```d
 public Event MyNewEvent = new Event();
 ```
 
-An event handler has the signature of void [name] (void* sender, void* args)
+An event handler has the signature of void [name] (void* sender, EventArgs args)
 ```d
-public void MyEventHandler (void* sender, void* args) {
+public void MyEventHandler (void* sender, EventArgs args) {
 	//Do something.
 }
 ```
