@@ -1,0 +1,11 @@
+{
+	"name": "sharpevents",
+	"authors": [
+		"Clipsey"
+	],
+	"targetType": "library",
+	"version": "1.0.0",
+	"description": "Library that adds C#-esque events to D.",
+	"copyright": "Copyright © 2018, Clipsey",
+	"license": "MIT"
+}

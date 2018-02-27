@@ -1,24 +1,14 @@
-# Compiled Object files
-*.o
-*.obj
-
-# Compiled Dynamic libraries
-*.so
-*.dylib
-*.dll
-
-# Compiled Static libraries
-*.a
-*.lib
-
-# Executables
-*.exe
-
-# DUB
 .dub
 docs.json
 __dummy.html
 docs/
-
-# Code coverage
+sharpevents.so
+sharpevents.dylib
+sharpevents.dll
+sharpevents.a
+sharpevents.lib
+sharpevents-test-*
+*.exe
+*.o
+*.obj
 *.lst
