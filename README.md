@@ -27,3 +27,9 @@ To unsubscribe, use -=
 ```d
 MyNewEvent -= &MyEventHandler;
 ```
+
+To invoke subscribed event handlers, run the class instance like a function.
+Remember to specify sender and arguments (cast to void*)
+```d
+MyNewEvent(null, null);
+```
