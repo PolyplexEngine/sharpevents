@@ -33,3 +33,6 @@ Remember to specify sender and arguments (cast to void*)
 ```d
 MyNewEvent(null, null);
 ```
+
+## Donations
+If this small library has been of any help to you, consider [Donating](https://ko-fi.com/clipsey). c:
