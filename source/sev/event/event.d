@@ -19,13 +19,13 @@ public class Event {
 		}
 	}
 
-	Event opAddAssign(EventHandler handler) {
+	Event opOpAssign(string op : "+")(EventHandler handler) {
 		handlers.length++;
 		handlers[$-1] = handler;
 		return this;
 	}
 
-	Event opSubAssign(EventHandler handler) {
+	Event opOpAssign(string op : "-")(EventHandler handler) {
 		int remove = 0;
 		for (int i = 0; i < handlers.length; i++) {
 			if (handlers[i] == handler) {
