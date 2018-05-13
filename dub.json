@@ -6,5 +6,5 @@
 	"targetType": "library",
 	"description": "Library that adds C#-esque events to D.",
 	"copyright": "Copyright © 2018, Clipsey",
-	"license": "MIT"
+	"license": "Boost"
 }
