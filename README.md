@@ -4,7 +4,7 @@ Library that adds C#-esque events to D.
 
 ## How to use
 
-the Event class is localed in the `sev.event` module (short for sharpevents)
+import `sev` to use the Event and EventArgs classes.
 
 To create a new event, do like this.
 ```d
