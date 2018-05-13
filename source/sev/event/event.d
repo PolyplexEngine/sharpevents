@@ -1,8 +1,20 @@
 module sev.event.event;
 import sev.event.eventargs;
 
+/**
+	An easy alias for the EventHandler signature.
+*/
 alias EventHandler = void delegate(void* sender, EventArgs data);
 
+/**
+	An event.
+	To add event handlers to the event use ~= or += followed by your event delegate.
+	(use EventHandler for an easy signature for the delegate)
+
+	The delegate should take an void* sender and EventArgs argument.
+
+	Use -= to remove an event handler delegate from the event.
+*/
 public class Event {
 	private EventHandler[] handlers;
 	this() { }
@@ -20,6 +32,12 @@ public class Event {
 	}
 
 	Event opOpAssign(string op : "+")(EventHandler handler) {
+		handlers.length++;
+		handlers[$-1] = handler;
+		return this;
+	}
+
+	Event opOpAssign(string op : "~")(EventHandler handler) {
 		handlers.length++;
 		handlers[$-1] = handler;
 		return this;
