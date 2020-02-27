@@ -37,4 +37,4 @@ void main() {
 
 Basic events are a bit more like C# events, the event arguments are based of a EventArgs class. But the implementation is slightly limited.
 
-See the unittests in `sev/event.d`
+See the unittests in `events/event.d`
