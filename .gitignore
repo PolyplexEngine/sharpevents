@@ -12,3 +12,4 @@ libsharpevents-test-*
 *.o
 *.obj
 *.lst
+sharpevents-test-library
