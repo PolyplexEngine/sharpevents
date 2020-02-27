@@ -1,35 +1,40 @@
 # sharpevents
 Library that adds C#-esque events to D.
 
+## Events
 
-## How to use
+An `Event(T)` is a container for a collection of delegate callbacks. `T` is the data type you want to pass to callbacks.
 
-import `sev` to use the Event and EventArgs classes.
-
-To create a new event, do like this.
 ```d
-public Event MyNewEvent = new Event();
-```
+import events;
 
-An event handler has the signature of void [name] (void* sender, EventArgs args)
-```d
-public void MyEventHandler (void* sender, EventArgs args) {
-	//Do something.
+struct MyEventData {
+	int callbackIntValue;
+}
+
+void main() {
+	Event!MyEventData event = new Event!MyEventData;
+
+	// The function signature that the event accepts in this case is:
+	// void delegate(void*, MyEventData)
+	event ~= (sender, args) {
+		import std.stdio : writeln;
+		writeln(args.callbackIntValue);
+	};
+
+	// Pass a null sender and MyEventData to the event.
+	event(null, MyEventData(42));
+
+	// Remove all handlers from the event
+	event.clear();
+
+	// If you have an instance of the handler available you can also remove a single instance via
+	// event -= (handler);
 }
 ```
 
-Subscribe to an event by doing += (like in C#). Remember to use a _pointer_ to the handler.
-```d
-MyNewEvent += &MyEventHandler;
-```
+## Basic Events
 
-To unsubscribe, use -=
-```d
-MyNewEvent -= &MyEventHandler;
-```
+Basic events are a bit more like C# events, the event arguments are based of a EventArgs class. But the implementation is slightly limited.
 
-To invoke subscribed event handlers, run the class instance like a function.
-Remember to specify sender and arguments (cast to void*)
-```d
-MyNewEvent(null, null);
-```
+See the unittests in `sev/event.d`

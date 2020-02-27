@@ -1,4 +1,3 @@
+deprecated("Please import events instead of sev.event")
 module sev.event;
-
-public import sev.event.event;
-public import sev.event.eventargs;
+public import events;

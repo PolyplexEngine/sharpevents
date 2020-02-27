@@ -1,5 +1,5 @@
-module sev.event.event;
-import sev.event.eventargs;
+module events.event;
+import events.eventargs;
 
 /**
 	An easy alias for the EventHandler signature.
@@ -27,6 +27,13 @@ public:
 	*/
 	size_t count() {
 		return handlers.length;
+	}
+
+	/**
+		Clears all handlers from the event
+	*/
+	void clear() {
+		handlers.length = 0;
 	}
 
 	/**

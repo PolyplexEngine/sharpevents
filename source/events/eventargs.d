@@ -1,4 +1,4 @@
-module sev.event.eventargs;
+module events.eventargs;
 
 /**
 	The arguments of an event.
